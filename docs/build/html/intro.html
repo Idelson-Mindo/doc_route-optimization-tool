@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Get Started &#8212;  Survey Route Optimization Tool:  0.1 documentation</title>
+    <title>1. Get Started &#8212;  Survey Route Optimization Tool:  0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/basic_mod.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -18,8 +18,8 @@
     <script src="_static/js/petite-vue.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Reference" href="reference.html" />
-    <link rel="prev" title="Welcome to route optimization tool’s documentation!" href="index.html" /> 
+    <link rel="next" title="2. Reference" href="reference.html" />
+    <link rel="prev" title="Survey Route optimization Tool’s documentation!" href="index.html" /> 
   </head><body data-dark_mode_code_blocks="true">
 
 <div id="top_nav">
@@ -33,7 +33,7 @@
         <p id="toggle_sidebar">
             <a href="#" title="Toggle sidebar">|||</a>
         </p>
-        <h1><a href="index.html" title="Go to homepage">Survey Routing</a></h1>
+        <h1><a href="index.html" title="Go to homepage">WorldBank - Survey Routing Tool</a></h1>
 
         <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
     <template v-if="mode == 'light'">
@@ -122,11 +122,18 @@
     
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Get Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exemples.html">Exemples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="articles.html">Articles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changes log</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#set-up">1.2. Set up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#data-requirement">1.3. Data requirement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">2. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exemples.html">3. Exemples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exemples.html#data">3.1. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exemples.html#routes-per-district">3.2. Routes per district</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exemples.html#atlas">3.3. Atlas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="articles.html">4. Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">5. Changes log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html#v-01">V.01</a></li>
 </ul>
 
         </div>
@@ -139,7 +146,38 @@
           <div class="body" role="main">
             
   <section id="get-started">
-<h1>Get Started<a class="headerlink" href="#get-started" title="Permalink to this heading">¶</a></h1>
+<h1>1. Get Started<a class="headerlink" href="#get-started" title="Permalink to this heading">¶</a></h1>
+</section>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h1>
+<p>The initial step is to install the necessary tool to run the application. The recommended tool for this purpose is Anaconda, which can be obtained from <a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a>. Ensure you choose the appropriate version compatible with your system.</p>
+<p>Since this code is intended to be executed with ArcGIS Pro from ESRI, it is essential to first create an account and install the ArcGIS version available at <a class="reference external" href="https://www.arcgis.com/">https://www.arcgis.com/</a> or <a class="reference external" href="https://www.esri.com/">https://www.esri.com/</a>. Make sure to have a valid license for ArcGIS.</p>
+<p>Additionally, you’ll need a text editor for coding. We suggest installing either Visual Studio Code from <a class="reference external" href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a> or Sublime Text from <a class="reference external" href="https://www.sublimetext.com/download">https://www.sublimetext.com/download</a>.</p>
+<p>We recommend the creation of a virtual environment using the file ‘virtualVenv.yml’ from the GitHub repository. Follow the steps below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">virtualVenv</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+</section>
+<section id="set-up">
+<h1>1.2. Set up<a class="headerlink" href="#set-up" title="Permalink to this heading">¶</a></h1>
+<p>Make sure that you have installed the arcpy library. If not, use the code below:
+.. code-block:: python</p>
+<blockquote>
+<div><p>conda install arcpy=3.1 -c esri</p>
+</div></blockquote>
+<p>To execute the code, run the code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="n">codefiles</span> <span class="n">using</span> <span class="n">c</span><span class="p">:</span>\<span class="n">Progra</span><span class="o">~</span><span class="mi">1</span>\<span class="n">ArcGIS</span>\<span class="n">Pro</span>\<span class="nb">bin</span>\<span class="n">Python</span>\<span class="n">scripts</span>\<span class="n">propy</span><span class="o">.</span><span class="n">bat</span> <span class="o">*</span><span class="n">path</span><span class="o">*.</span><span class="n">py</span>
+</pre></div>
+</div>
+</section>
+<section id="data-requirement">
+<h1>1.3. Data requirement<a class="headerlink" href="#data-requirement" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>Market location spatial data</p></li>
+<li><p>River data</p></li>
+<li><p>roads</p></li>
+<li><p>boundaries</p></li>
+</ul>
 </section>
 
 
@@ -147,6 +185,23 @@
           </div>
         </div>
       </div>
+    
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">1. Get Started</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#set-up">1.2. Set up</a></li>
+<li><a class="reference internal" href="#data-requirement">1.3. Data requirement</a></li>
+</ul>
+
+            </div>
+        </div>
     
 
       <div class="clearer"></div>
@@ -156,13 +211,13 @@
             <div class="left">
                 
                 <a href="index.html">
-                    <span class="icon">&lt;</span><span>Welcome to route optimization tool’s documentation!</span></a>
+                    <span class="icon">&lt;</span><span>Survey Route optimization Tool’s documentation!</span></a>
                 
             </div>
 
             <div class="right">
                 
-                    <a href="reference.html"><span>Reference</span><span class="icon">&gt;</span></a>
+                    <a href="reference.html"><span>2. Reference</span><span class="icon">&gt;</span></a>
                 
             </div>
         </div>
