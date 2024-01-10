@@ -1,0 +1,9 @@
+1. conda activate C:\Users\idels\Documents\github\doc_route-optimization-tool\docEnv
+2. un this command:
+
+ sphinx-build -M html docs/source/ docs/build/
+
+ Now to render it with the new content, you can use the sphinx-build command as before, or leverage the convenience script as follows:
+
+ cd docs
+ make html
