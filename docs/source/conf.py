@@ -20,7 +20,8 @@
 project = ' Survey Route Optimization Tool: '
 copyright = '2024, Tillmann von Carnap & Idelson Mindo'
 author = 'Tillmann von Carnap & Idelson Mindo'
-
+# If specified, this will be used in the nav bar instead.
+html_short_title = "Survey Routing"
 # The full version, including alpha/beta/rc tags
 release = '0.1'
 
