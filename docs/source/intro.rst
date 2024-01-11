@@ -15,6 +15,12 @@ We recommend the creation of a virtual environment using the file 'virtualVenv.y
 
   conda env create -f virtualVenv.yml
 
+Activate 
+
+.. code-block:: python
+
+  conda activate WB_SRT
+
 1.2. Set up
 ===================
 Make sure that you have installed the arcpy library. If not, use the code below:
